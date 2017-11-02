@@ -179,6 +179,6 @@
             position: new google.maps.LatLng(-31.5289506, -68.527952),
             map: map,
             icon: image,
-            title: 'OAK Theme'
+            title: 'SIMPLECS.'
         });
     }
