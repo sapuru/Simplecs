@@ -88,7 +88,7 @@ if(isset($_POST['email'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Simplecs.</title>
+    <title>OAK - HTML Theme</title>
     <meta name="description" content="">
     <meta name="msapplication-tap-highlight" content="yes" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
@@ -135,60 +135,145 @@ if(isset($_POST['email'])) {
 
     <!-- Modernizer & Respond js -->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcj7IUmQauOqpqeL5xj-UZbLb03vhBV3s&amp;sensor=false"></script>
-
 </head>
 
 <body>
 
-    <!-- Preloader -->
-    <div class="cover"></div>
+      <!-- Preloader -->
+      <div class="cover"></div>
 
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/logo-amarillo.png" alt="Logo">
-                </a>
-            </div>
-        </div>
+      <div class="header">
+          <div class="container">
+              <div class="logo">
+                  <a href="index.html">
+                      <img src="img/logo-amarillo.png" alt="Logo">
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="slider-wrapper">
+              <div class="slider-description">
+                  <div class="slider-description-inner">
+                      <h1>Pura<span>Elegancia</span></h1>
+                  </div>
+                  <div class="cd-intro">
+                      <div class="cd-headline clip">
+                          <span class="cd-words-wrapper">
+                              <b class="is-visible">Orientado a Resultados</b>
+                              <b>Diseño Moderno</b>
+                              <b>Soluciones Creativas</b>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <div id="slider-ef" class="slider-images-wrapper">
+                  <img class="img-responsive" src="img/simplecs-header.jpg" alt="">
+                  <img class="img-responsive" src="img/simplecs-header-2.jpg" alt="">
+              </div>
+          </div>
+      </div>
+      <div class="container margin-top">
+          <div class="history-wrapper">
+              <div class="col-md-6 wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.5s">
+                  <div class="row">
+                      <article>
+                          <h1>SOBRE SIMPLECS.</h1>
+                          <hr>
+                          <h4>Simplecs es un equipo interdisciplinario de jóvenes sanjuaninos que se crea con el fin de ofrecerte una alternativa diferenciadora para que puedas consolidar tu presencia online.</h4>
+                          <p>
+                          <br/>Nuestros servicios están enfocados en las necesidades de nuestros clientes y, además, buscamos no solo proveerles de soluciones web, sino también de ayudarles a encontrar una identidad propia que los ayude a impulsar sus ideas.</p>
+                      </article>
+                  </div>
+              </div>
+              <div class="col-md-5 col-md-offset-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                  <div class="row">
+                      <div id="history-images" class="owl-carousel">
+                          <div><img class="img-responsive center-block" src="img/about_img.jpg" alt="About"></div>
+                          <div><img class="img-responsive center-block" src="img/about_img2.jpg" alt="About"></div>
+                          <div><img class="img-responsive center-block" src="img/about_img3.jpg" alt="About"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+<div class="container">
+    <div class="page-error">
+        <h1>GRACIAS</h1>
+        <h3> ¡Muy pronto te estaremos contactando!</h3>
+        <p>Mientras tanto podés volver al <a href="index.html">Inicio</a></p>
     </div>
+</div>
 
+
+
+
+
+<div class="footer margin-top">
     <div class="container">
-        <div class="slider-wrapper">
-            <div class="slider-description">
-                <div class="slider-description-inner">
-                    <h1>Pura<span>Elegancia</span></h1>
-                </div>
-                <div class="cd-intro">
-                    <div class="cd-headline clip">
-                        <span class="cd-words-wrapper">
-                            <b class="is-visible">Orientado a Resultados</b>
-                            <b>Diseño Moderno</b>
-                            <b>Soluciones Creativas</b>
-                        </span>
+        <div class="row">
+                <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="footer-inner">
+                        <div class="footer-content">
+                            <h4>SIMPLECS</h4>
+                                <address>San Juan<br> Argentina</address>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="slider-ef" class="slider-images-wrapper">
-                <img class="img-responsive" src="img/simplecs-header.jpg" alt="">
-                <img class="img-responsive" src="img/simplecs-header-2.jpg" alt="">
-            </div>
+
+                <div class="col-md-2 col-md-push-8 col-sm-4 col-xs-12">
+                    <div class="footer-inner">
+                        <div class="footer-content">
+                           <h4>CONTACTO</h4>
+                            <p>
+                                T:+54 9 264 6209064 <br>
+                                E:hola@simplecs.tech <br>
+                                W:www.simplecs.tech
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="footer-inner">
+                        <div class="footer-content">
+                        <ul class="social-media">
+                            <li><a href="https://www.facebook.com/simplecstech/"><i class="iconmoon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/simplecstech"><i class="iconmoon-twitter"></i></a></li>
+
+                            <li><a href="#"><i class="iconmoon-linkedin2"></i></a></li>
+                        </ul>
+                        <span class="copyright-mark">&copy; 2017 SIMPLECS, TODOS LOS DERECHOS RESERVADOS</span>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <div class="container margin-top">
-        <div class="history-wrapper">
-            <div class="col-md-6 wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.5s">
-                <div class="row">
-                  <h1>¡Gracias! Tu mensaje se ha enviado. Pronto nos comunicaremos</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </body>
-        </html>
+</div>
 
+    <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script data-pace-options='{ "ajax": false }' src="js/vendor/pace.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/classie.js"></script>
+    <script src="js/vendor/isotope.pkgd.min.js"></script>
+    <script src="js/vendor/jquery.velocity.min.js"></script>
+    <script src="js/vendor/jquery.kenburnsy.min.js"></script>
+    <script src="js/vendor/textslide.js"></script>
+    <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="js/vendor/tabs.js"></script>
+    <script src="js/ef-slider.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
+    <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="js/vendor/jquery.social-buttons.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ajax.js"></script>
+</body>
+</html>
 
 <?php
 
