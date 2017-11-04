@@ -152,61 +152,13 @@ if(isset($_POST['email'])) {
           </div>
       </div>
 
-      <div class="container">
-          <div class="slider-wrapper">
-              <div class="slider-description">
-                  <div class="slider-description-inner">
-                      <h1>Pura<span>Elegancia</span></h1>
-                  </div>
-                  <div class="cd-intro">
-                      <div class="cd-headline clip">
-                          <span class="cd-words-wrapper">
-                              <b class="is-visible">Orientado a Resultados</b>
-                              <b>Diseño Moderno</b>
-                              <b>Soluciones Creativas</b>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <div id="slider-ef" class="slider-images-wrapper">
-                  <img class="img-responsive" src="img/simplecs-header.jpg" alt="">
-                  <img class="img-responsive" src="img/simplecs-header-2.jpg" alt="">
-              </div>
-          </div>
-      </div>
-      <div class="container margin-top">
-          <div class="history-wrapper">
-              <div class="col-md-6 wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.5s">
-                  <div class="row">
-                      <article>
-                          <h1>SOBRE SIMPLECS.</h1>
-                          <hr>
-                          <h4>Simplecs es un equipo interdisciplinario de jóvenes sanjuaninos que se crea con el fin de ofrecerte una alternativa diferenciadora para que puedas consolidar tu presencia online.</h4>
-                          <p>
-                          <br/>Nuestros servicios están enfocados en las necesidades de nuestros clientes y, además, buscamos no solo proveerles de soluciones web, sino también de ayudarles a encontrar una identidad propia que los ayude a impulsar sus ideas.</p>
-                      </article>
-                  </div>
-              </div>
-              <div class="col-md-5 col-md-offset-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                  <div class="row">
-                      <div id="history-images" class="owl-carousel">
-                          <div><img class="img-responsive center-block" src="img/about_img.jpg" alt="About"></div>
-                          <div><img class="img-responsive center-block" src="img/about_img2.jpg" alt="About"></div>
-                          <div><img class="img-responsive center-block" src="img/about_img3.jpg" alt="About"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
 <div class="container">
     <div class="page-error">
         <h1>GRACIAS</h1>
         <h3> ¡Muy pronto te estaremos contactando!</h3>
-        <p>Mientras tanto podés volver al <a href="index.html">Inicio</a></p>
+        <p>Mientras tanto podés volver al <a href="index.html">Inicio</a> o visitarnos en <a href="https://facebook.com/simplecstech">Facebook</a></p>
     </div>
 </div>
-
 
 
 
