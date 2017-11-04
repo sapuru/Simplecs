@@ -88,7 +88,7 @@ if(isset($_POST['email'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>OAK - HTML Theme</title>
+    <title>Simplecs</title>
     <meta name="description" content="">
     <meta name="msapplication-tap-highlight" content="yes" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
