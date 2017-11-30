@@ -69,6 +69,8 @@
     <!-- Preloader -->
     <div class="cover"></div>
 
+    <div class="md-overlay"></div>
+
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -139,7 +141,7 @@
 </div>
 
 
-<div class="container margin-top">
+<div class="container margin-top" id="equipo">
     <div class="main-title">
         <h1>EL EQUIPO</h1>
         <hr>
@@ -155,6 +157,7 @@
                             <span class="position">FOUNDER</span>
                             <hr>
                             <ul class="member-social-media">
+                                <li><a href="#equipo" class="md-trigger" data-modal="Luis">Bio</a></li>
                                 <li><a href="http://facebook.com/simplecs.tech" target="_blank">Facebook</a></li>
                                 <li><a href="http://twitter.com/luiscmaza" target="_blank">Twitter</a></li>
                             </ul>
@@ -176,6 +179,7 @@
                             <span class="position">CO-FOUNDER</span>
                             <hr>
                             <ul class="member-social-media">
+                                <li><a href="#equipo" class="md-trigger" data-modal="Ayma">Bio</a></li>
                                 <li><a href="http://facebook.com/sapuru.soy" target="_blank">Facebook</a></li>
                                 <li><a href="http://twitter.com/_sapuru" target="_blank">Twitter</a></li>
                             </ul>
@@ -284,6 +288,29 @@
 </div>
 <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
 
+
+<div class="md-modal md-effect-12" id="Luis">
+  <div class="md-content">
+    <h3>Luis C. Maza</h3>
+    <div>
+      <p>Desarrollador web con experiencia en el <strong>asesoramiento, gestión y control de proyectos tecnológicos</strong>. Enfocado en la Comunicación y el Marketing Digital, el Social Media y la generación de contenidos digitales. Amante de las iniciativas sustentables e <strong>impulsor de iniciativas de alfabetización digital</strong>.
+      </p>
+      <button class="btn-1 md-close">Salir!</button>
+    </div>
+  </div>
+</div>
+
+<div class="md-modal md-effect-12" id="Ayma">
+  <div class="md-content">
+    <h3>Aymará Samudio</h3>
+    <div>
+      <p>Desarrolladora web autodidacta. Actual CTO de Greendemia y Directora de Greendemia Academy. Con <strong>trayectoria en el emprendedurismo y mentora en el ámbito emprendedor</strong>. <strong>Entusiasta del Software Libre</strong> e impulsora de <strong>iniciativas de impacto social relacionadas a la equidad de género</strong>.
+      </p>
+      <button class="btn-1 md-close">Salir!</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/vendor/jquery-1.11.2.min.js"></script>
 <script data-pace-options='{ "ajax": false }' src="js/vendor/pace.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
@@ -302,6 +329,8 @@
 <script src="js/main.js"></script>
 <script src="js/ajax.js"></script>
 <script src="js/map-costum.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/modalEffects.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109753561-1"></script>
