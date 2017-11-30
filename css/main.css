@@ -1990,7 +1990,7 @@ ul.client-thumb-2 li a img:hover{
     z-index: 4;
 }
 .img .overlay-thumb:hover {
-    background-color: rgba(123, 238, 199, .9);
+    background-color: rgba(248, 212, 3, .9);
 }
 
 .img .overlay-thumb.bg-white:hover{

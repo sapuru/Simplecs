@@ -9,7 +9,7 @@
             zoom: 14,
 
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(-31.5289506,-68.527952), // New York
+            center: new google.maps.LatLng(-31.536443, -68.525801),
 
 
             mapTypeControl: true,
@@ -176,7 +176,7 @@
 
         // Let's also add a marker while we're at it
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(-31.5289506, -68.527952),
+            position: new google.maps.LatLng(-31.536443, -68.525801),
             map: map,
             icon: image,
             title: 'SIMPLECS.'
