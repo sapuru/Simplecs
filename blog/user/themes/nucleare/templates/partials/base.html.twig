@@ -1,0 +1,186 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set is_sidebar = header.sidebar is sameas(true) or (header.sidebar is not defined and theme_config.sidebar is sameas(true)) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link href="https://fonts.googleapis.com/css?family=Lekton|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/font-awesome.min.css',103) %}
+        {% do assets.addCss('theme://css/style.css', 102) %}
+        {% if theme_config.rtl %}
+            {% do assets.addCss('theme://css/rtl.css', 101) %}
+        {% endif %}
+        {% if theme_config.colors and theme_config.custom_colors %}
+            {% set custom_colors = include('css/custom_colors.css.twig') %}
+            {% do assets.addInlineCss(custom_colors, 102) %}
+        {% endif %}
+        {% do assets.addCss('theme://css/custom.css',100) %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+    {% endblock %}
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+        {% do assets.addJs('theme://js/skip-link-focus-fix.js',100) %}
+        {% do assets.addJs('theme://js/nucleare.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+    <div id="page" class="hfeed site">
+        {% block header %}
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="http://simplecs.tech">
+                        <img src="http://simplecs.tech/img/logo-amarillo.png" alt="Logo Simplecs">
+                    </a>
+                </div>
+                <div id="menu1">
+                  <a href="http://simplecs.tech/acerca-de.html">Acerca de</a> // <a href="http://simplecs.tech/blog">Blog</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header-page ef-parallax-bg" style="background-image:url(http://simplecs.tech/img/header-blog.jpg)">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="row">
+                        <div class="inner-content">
+                            <div class="header-content">
+                                <h1>Blog Simplecs.</h1>
+                                <hr>
+                                <p>Claridad en los conceptos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    <div class="container margin-top">
+                      <div class="blog-wrapper">
+                    {% block content %}{% endblock %}
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container margin-top">
+            <div class="newsletter">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="newsletter-left">
+                            <div class="newsletter-left-inner">
+                                <h1> ¿Sos emprendedor <br> o tenés un proyecto en mente <b>y querés que esté en Internet?</b></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="newsletter-right" style="background: url(http://simplecs.tech/img/newsletter-bg.jpg)">
+                            <div class="newsletter-right-inner">
+                                <!-- <form>
+                                    <input type="text" name="newsletter" placeholder="ENTER YOUR EMAIL">
+                                    <input type="submit" value="SUBSCRIBE">
+                                </form> -->
+                                <!-- Begin MailChimp Signup Form -->
+                                <div id="mc_embed_signup">
+                                <form action="https://tech.us17.list-manage.com/subscribe/post?u=343aa2575c42465cf73dbd5f7&amp;id=e3c0718527" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group">
+                                  <input type="email" value="" placeholder="EMAIL" name="EMAIL" class="required email" id="mce-EMAIL">
+                                </div>
+                                  <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_343aa2575c42465cf73dbd5f7_e3c0718527" tabindex="-1" value=""></div>
+                                    <div class="clear"><input type="submit" value="SUSCRIBIME!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                    </div>
+                                </form>
+                                </div>
+                                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='BIRTHDAY';ftypes[3]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                                <!--End mc_embed_signup-->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block footer %}
+        <div class="footer margin-top">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                    <h4>SIMPLECS</h4>
+                                        <address>San Juan<br> Argentina</address>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-md-push-8 col-sm-4 col-xs-12">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                   <h4>CONTACTO</h4>
+                                    <p>
+                                        T:+54 9 264 6209064 <br>
+                                        E:hola@simplecs.tech <br>
+                                        W:www.simplecs.tech
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="footer-inner">
+                                <div class="footer-content">
+                                <ul class="social-media">
+                                    <li><a href="https://www.facebook.com/simplecstech/"><i class="iconmoon-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/simplecstech"><i class="iconmoon-twitter"></i></a></li>
+
+                                    <li><a href="#"><i class="iconmoon-linkedin2"></i></a></li>
+                                </ul>
+                                <span class="copyright-mark">&copy; 2017 SIMPLECS, TODOS LOS DERECHOS RESERVADOS</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div><!-- #page -->
+    <a href="#top" class="to-top"><i class="fa fa-angle-up fa-lg"><span class="screen-reader-text">Back to top</span></i></a>
+
+    {{ assets.js('bottom') }}
+
+    <link rel="stylesheet" href="../../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tabstyles.css" />
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+    <header class="page-header">
+        <h1 class="page-title">{{ 'THEME_NUCLEARE.SEARCH.RESULTS_FOR'|t }}: <mark>{{ query }}</mark></h1>
+        <div class="taxonomy-description">
+            {% if search_results.count is sameas(0) %}
+                <p>{{ 'THEME_NUCLEARE.SEARCH.NO_RESULT'|t }}</p>
+            {% endif %}
+            <form role="search" method="get" class="result-search-form" action="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
+                <input type="search" class="result-search-field" placeholder="{{ 'THEME_NUCLEARE.SEARCH.PLACEHOLDER'|t }}" name="search-field">
+                <input type="submit" class="result-search-submit" value="{{ 'THEME_NUCLEARE.SEARCH.BUTTON'|t }}">
+            </form>
+        </div>
+    </header>
+    {% for page in search_results %}
+        {% include 'partials/blog_item.html.twig' with {'page':page, 'truncate':true} %}
+    {% endfor %}
+
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+    {% endif %}
+{% endblock %}

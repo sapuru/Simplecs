@@ -1,0 +1,17 @@
+enabled: true
+dropdown:
+  enabled: true
+sidebar: true
+header_image:
+  enabled: true
+  src: assets/header-code.jpg
+  height: 400px
+custom_colors: true
+colors:
+  text_color: '#020300'
+  links_and_buttons: '#F8D403'
+  links_and_buttons_hover: '#FEA700'
+  background: '#ffffff'
+  content_background: '#FFFFFF'
+  navbar: '#FFFFFF'
+  navbar_items: '#FFFFFF'

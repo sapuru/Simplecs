@@ -1,0 +1,15 @@
+{% set taxlist = taxonomylist.get() %}
+{% if taxlist %}
+	{% set nb_tags = count(taxlist[taxonomy]) %}
+    {% for tax,value in taxlist[taxonomy] %}
+        {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
+        {% set hidden = loop.index > maxtag ? 'hidden' : '' %}
+        <a class="{{ active }} {{ hidden }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+        {% if loop.index is sameas(maxtag) and nb_tags > maxtag %}
+        	<input type="checkbox" id="show-more-tags" class="hidden">
+        	<label for="show-more-tags">{{ 'THEME_NUCLEARE.TAGS.MORE'|t }}</label>
+        {% endif %}
+    {% endfor %}
+{% else %}
+	<p>{{ 'THEME_NUCLEARE.TAGS.NO_TAG'|t }}</p>
+{% endif %}

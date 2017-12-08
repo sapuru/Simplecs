@@ -1,0 +1,122 @@
+{# If it's not a blog page #}
+{% if not page.header.content %}
+    <div class="post hentry published blog-post">
+      <div class="row">
+        <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.10s">
+        <div class="blog-front-image">
+            {% set header_image_media = page.media.images[header_image_file] %}
+            {{ header_image_media.cropZoom(header_image_width, header_image_height).html(page.title, 'THEME_NUCLEARE.BLOG.HEADER_IMAGE_ALT'|t) }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-5">
+          <div class="blog-front-content wow animated fadeInUp" data-wow-delay="0.20s">
+              <div class="blog-front-content-inner">
+        {% if page.taxonomy.category %}
+            <div class="entry-category">
+                <span class="cat-links">
+                {% for cat in page.taxonomy.category %}
+                    <a href="{{ base_url }}/category{{ config.system.param_sep }}{{ cat|e('url') }}">{{ cat }}</a>
+                    {%if not loop.last %}
+                    /
+                    {% endif %}
+                {% endfor %}
+                </span>
+            </div>
+        {% endif %}
+            <h1 class="entry-title">{{ page.title }}</h1>
+            <div class="entry-meta small-part">
+                <span class="posted-on">
+                    <i class="fa fa-clock-o space-left-right"></i> {{ page.date|date('THEME_NUCLEARE.DATE_FORMAT'|t) }}
+                </span>
+                <span class="byline">
+                    <i class="fa fa-user space-left-right"></i>
+                    <span class="author vcard">
+                        {{ page.header.author ? page.header.author : config.site.author.name}}
+                    </span>
+                </span>
+                {% if config.plugins.jscomments.enabled and header.jscomments and not truncate %}
+                <span class="comment-link">
+                    <i class="fa fa-comments-o space-left-right"></i>
+                    <a href="{{ page.url }}/#comment">{{ 'THEME_NUCLEARE.BLOG.LEAVE_COMMENT'|t }}</a>
+                </span>
+                {% endif %}
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+        <div class="full-blog-content">
+            {% if page.header.continue_link is sameas(false) %}
+                {{ page.content }}
+                {% if not truncate %}
+                {% set show_prev_next = true %}
+                {% endif %}
+            {% elseif truncate and page.summary != page.content %}
+                {{ page.summary }}
+                <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
+            {% elseif truncate %}
+                {% if page.summary != page.content %}
+                    {{ page.content|truncate(550) }}
+                {% else %}
+                    {{ page.content }}
+                {% endif %}
+                <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
+            {% else %}
+                {{ page.content }}
+                {% set show_prev_next = true %}
+            {% endif %}
+        </div>
+
+
+        <footer class="entry-footer">
+            <div class="entry-bottom small-part">
+            {%if page.taxonomy.tag %}
+                <span class="tags-links">
+                    <i class="fa fa-tags space-right"></i>
+                {% for tag in page.taxonomy.tag %}
+                    <a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                    {%if not loop.last %}
+                    ,
+                    {% endif %}
+                {% endfor %}
+                </span>
+            {% endif %}
+            </div>
+            {% if config.plugins.socialbuttons.enabled %}
+                <div class="entry-meta small-part">
+                    {% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+                </div>
+            {% endif %}
+        </footer>
+    </div>
+
+    {% if show_prev_next and (not page.isFirst or not page.isLast) %}
+    <nav class="navigation post-navigation" role="navigation">
+        <h1 class="screen-reader-text">{{ 'THEME_NUCLEARE.BLOG.NAVIGATION'|t }}</h1>
+        <div class="nav-links">
+            {% if not page.isLast %}
+                <div class="nav-previous">
+                    <a href="{{ page.prevSibling.url }}" rel="prev">
+                        <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-left"></i></div>
+                        <div class="meta-nav">
+                            <span class="small-part">{{ 'THEME_NUCLEARE.BLOG.PREV'|t }}</span>
+                            <div class="next-prev-name">{{ page.prevSibling.title }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% if not page.isFirst %}
+                <div class="nav-next">
+                    <a href="{{ page.nextSibling.url }}" rel="next">
+                        <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-right"></i></div>
+                        <div class="meta-nav">
+                            <span class="small-part">{{ 'THEME_NUCLEARE.BLOG.NEXT'|t }}</span>
+                            <div class="next-prev-name">{{ page.nextSibling.title }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    {% endif %}

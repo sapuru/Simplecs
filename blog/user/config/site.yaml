@@ -1,0 +1,17 @@
+title: Simplecs.
+default_lang: en
+author:
+  name: Simplecs
+  email: hola@simplecs.tech
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Aportamos herramientas concretas para ayudarte a transmitir de forma consistente tu marca y conseguir tus objetivos de negocio.'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog

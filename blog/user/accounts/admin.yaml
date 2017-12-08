@@ -1,0 +1,11 @@
+email: info@simplecs.tech
+fullname: 'Simplecs Tech'
+title: Simplecs
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$QrRvkhjQRDx8Xm7E92rcne0DPO5JwOhUxHNV5HWOURbK/7DSK87Ty
